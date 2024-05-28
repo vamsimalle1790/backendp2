@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: vamsimallebackendp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vamsimallebackendp
+  template:
+    metadata:
+      labels:
+        app: vamsimallebackendp 
+    spec:
+      containers:
+        - name: vamsimallebackendp 
+          image: helloguru.azurecr.io/vamsimallebackendp
+          ports:
+          - containerPort: 8000
